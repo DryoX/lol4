@@ -29,9 +29,10 @@ bot.on("message", async message => {
 
 //Adding automatic message sender!
 
-bot.on("guildMemberAdd", async member => {
+bot.on("guildMemberAdd", member => {
 
     let welchannel = member.guild.channels.find(channel => channel.name === "welcome-leave");
+    if(!welchannel) return;
 
         let aftgh = new Discord.RichEmbed()
             .setColor("RANDOM")
@@ -40,15 +41,16 @@ bot.on("guildMemberAdd", async member => {
                 "Welcome " + `<@${member.id}>`,
                 "Sebelum memulai lebih baik kamu membaca peraturan dahulu!",
                 "Jika membutuhkan bantuan , kamu bita tulis cg!help , Oke!"
-            ]);
+            ])
 
-           return welchannel.send(aftgh);
+           welchannel.send(aftgh);
 
 });
 
-bot.on("guildMemberRemove", async member => {
+bot.on("guildMemberRemove", member => {
 
     let welchannela = member.guild.channels.find(channel => channel.name === "welcome-leave");
+    if(!welchannela) return;
 
         let aftgha = new Discord.RichEmbed()
             .setColor("RANDOM")
@@ -57,9 +59,9 @@ bot.on("guildMemberRemove", async member => {
                 "Good Bye " + `<@${member.id}>`,
                 "Terima kasih atas kunjunganmu!",
                 "Dan good luck!"
-            ]);
+            ])
 
-           return welchannela.send(aftgha);
+           welchannela.send(aftgha);
 
         });
 
