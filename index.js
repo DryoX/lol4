@@ -2,7 +2,7 @@
 
 const Discord = require("discord.js");
 const config = require("./config.json");
-const crash = ["Welcome to MMS", "Enjoy at MMS", "Peraturan tetap berlaku!", "tulis cg!help"];
+const crash = ["Welcome to MMS", "Enjoy at MMS", "Peraturan tetap berlaku!", "tulis cg!help", "Merry Christmas 25/18!"];
 
 const bot = new Discord.Client({disableEveryone: true});
 
